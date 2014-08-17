@@ -1,0 +1,137 @@
+<ion-view title="Cirugia Torax">
+    <ion-content>
+      <!-- The content of the page -->
+      
+        <label class="item item-input item-select">
+			<div class="input-label">
+		      Edad
+		    </div>
+		    <select ng-model="torax.edad">
+		      <option value="0"> < 55 </option>
+		      <option value="0.7679"> 55-65 </option>
+		      <option value="1.0073"> >= 65 </option>
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Sexo
+		    </div>
+		    <select ng-model="torax.sexo">
+		      <option value="0">F</option>
+		      <option value="0.4505">M</option>
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Clasificacion ASA
+		    </div>
+		    <select ng-model="torax.sas">
+		      <option value="0"> <= 2 </option>
+		      <option value="0.6057"> >= 3 </option>
+		      
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Clase Funcional
+		    </div>
+		    <select ng-model="torax.funcional">
+		      <option value="0"> <= 2 </option>
+		      <option value="0.689"> >= 3 </option>
+		      
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Disnea Score
+		    </div>
+		    <select ng-model="torax.disnea">
+		      <option value="0"> <= 2 </option>
+		      <option value="0.9075"> >= 3 </option>
+		      
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Tipo de Cirugia
+		    </div>
+		    <select ng-model="torax.tipoCirugia">
+		      <option value="0">Electiva</option>
+		      <option value="0.8443">Emergente/Urgente</option>
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Comorbidad Score
+		    </div>
+		    <select ng-model="torax.comorbilidad">
+		      <option value="0"> 0 </option>
+		      <option value="0.7447"> <= 2 </option>
+		      <option value="0.9065"> >= 3 </option>
+		      
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Diagnostico
+		    </div>
+		    <select ng-model="torax.diagnostico">
+		      <option value="0">Benigno</option>
+		      <option value="1.2423">Maligno</option>
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Procedimiento
+		    </div>
+		    <select ng-model="torax.procedimiento">
+		      <option value="1.2176">Neumonectomia</option>
+		      <option value="0">Otra</option>
+		    </select>
+		</label>
+		<ul class="list">
+		<div class="item item-divider"> Factores de Riesgo
+  		</div>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.cxAltoRiesgo">
+		     </label>
+		     Cirugia de alto riesgo
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.eventoIsquemico">
+		     </label>
+		     Historia de evento isquemico cardiaco
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.insuficienciaCardiaca">
+		     </label>
+		     Historia de insuficiencia cardiaca
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.enfermedadCerebroVascular">
+		     </label>
+		     Historia de enfermedad cerebro vascular
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.diabetesInsulino">
+		     </label>
+		     Diabetes insulino-requeriente
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.creatinaSerica">
+		     </label>
+		     Creatina serica > 2mg/dl
+		  </li>
+		</ul>
+		<button class="button button-block button-positive" ng-click="calcular()">
+  Calcular Riesgo
+</button>
+	
+    </ion-content>
+</ion-view>

@@ -1,0 +1,165 @@
+<ion-view title="Cirugia Colorectal">
+    <ion-content>
+      <!-- The content of the page -->
+      <div class="list">
+      	<div class="item item-divider">Score Fisiologico</div>
+        <label class="item item-input item-select">
+			<div class="input-label">
+		      Edad
+		    </div>
+		    <select ng-model="general.edad">
+		      <option value="1"> &lt;= 60 </option>
+		      <option value="3"> 61-70 </option>
+		      <option value="4"> &gt; 71 - 80 </option>
+		      <option value="8">  =&gt; 81 </option>
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Sistema Cardiaco
+		    </div>
+		    <select ng-model="general.sistemaCardiaco">
+		      <option value="1">No</option>
+		      <option value="2">Moderado</option>
+		      <option value="3">Severo</option>
+		      
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Presion Arterial Sistolica
+		    </div>
+		    <select ng-model="general.sistolica">
+		      <option value="1"> 100 - 170 </option>
+		      <option value="2"> &gt; 170 o 90 - 99 </option>
+		      <option value="3"> &lt; 90 </option>
+		      		      
+		    </select>
+		</label>
+		
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Pulso
+		    </div>
+		    <select ng-model="general.pulso">
+		      <option value="1"> 40-100 </option>
+		      <option value="2"> 101 - 120</option>
+		      <option value="3"> &gt;120 o &lt; 40 </option>
+		      
+		    </select>
+		</label>
+		
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Urea(mmol/l)
+		    </div>
+		    <select ng-model="general.urea">
+		      <option value="1"> &lt;= 10 </option>
+		      <option value="2"> 10.1 - 15 </option>
+		      <option value="3"> &gt; 15 </option>
+		      </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Hemoglobina(g/dl)
+		    </div>
+		    <select ng-model="general.hemoglobina">
+		      <option value="1"> 13 - 16</option>
+		      <option value="2">10-12.9 o 16.1 - 18</option>
+		      <option value="8"> &lt; 10 o &gt; 18 </option>
+		      
+		    </select>
+		</label>
+		
+		<div class="list">
+			<div class="item item-divider">Score Operativo</div>
+			<label class="item item-input item-select">
+			<div class="input-label">
+		      Gravedad Operativa
+		    </div>
+		    <select ng-model="operativa.gravedad">
+		      <option value="1"> Menor </option>
+		      <option value="3"> Intermedia </option>
+		      <option value="4"> Mayor </option>
+		      <option value="8"> Mayor + </option>
+		           
+		    </select>
+		</label>
+				
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      C. peritoneal
+		    </div>
+		    <select ng-model="operativa.peritoneal">
+		      <option value="1"> Menor(Fluido seroso) </option>
+		      <option value="2"> Pus localizado </option>
+		      <option value="3"> pus o heces libres </option>       
+		    </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Malignidad
+		    </div>
+		    <select ng-model="operativa.malignidad">
+		      <option value="1"> No cancer o Dukes´ A-B </option>
+		      <option value="2"> Dukes´c</option>
+		      <option value="3"> Dukes´ D </option>
+		      </select>
+		</label>
+		<label class="item item-input item-select">
+			<div class="input-label">
+		      Urgencia de cirugia
+		    </div>
+		    <select ng-model="operativa.modoCirugia">
+		      <option value="1"> Electiva </option>
+		      <option value="3"> Urgente </option>
+		      <option value="8"> Emergencia</option>       
+		    </select>
+		</label>
+		</div>
+		<ul class="list">
+		<div class="item item-divider"> Factores de Riesgo
+  		</div>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.cxAltoRiesgo">
+		     </label>
+		     Cirugia de alto riesgo
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.eventoIsquemico">
+		     </label>
+		     Historia de evento isquemico cardiaco
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.insuficienciaCardiaca">
+		     </label>
+		     Historia de insuficiencia cardiaca
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.enfermedadCerebroVascular">
+		     </label>
+		     Historia de enfermedad cerebro vascular
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.diabetesInsulino">
+		     </label>
+		     Diabetes insulino-requeriente
+		  </li>
+		  <li class="item item-checkbox">
+		     <label class="checkbox">
+		       <input type="checkbox" ng-model="factoresRiesgo.creatinaSerica">
+		     </label>
+		     Creatina serica > 2mg/dl
+		  </li>
+		</ul>
+		<button class="button button-block button-positive" ng-click="calcular()">
+  Calcular Riesgo
+</button>
+	
+    </ion-content>
+</ion-view>
